@@ -1,5 +1,40 @@
-snippet cs
-	var cx = React.addons.classSet;
+snippet it
+	it("${1}", function() {
+		${2}
+	});
+snippet desc
+	describe("${1}", function() {
+		${2}
+	});
+snippet con
+	constructor(props) {
+		super(props);
+		${0}
+	}
+snippet imp
+	import ${1} from ${2};
+snippet req
+	var ${1} = require('${2}');
+snippet exp
+	export default ${1}
+snippet cls
+	export default class ${1:ClassName} extends React.Component {
+		constructor(props) {
+			super(props);
+
+			this.state = {${2}};
+		}
+	}
+snippet clsex
+	class ${1:ClassName} extends React.Component {
+		constructor(props) {
+			super(props);
+
+			this.state = {${2}};
+		}
+	}
+
+	export default $1
 snippet cdm
 	componentDidMount() {
 		${1}
@@ -24,12 +59,18 @@ snippet cwu
 	componentWillUpdate(nextProps, nextState) {
 		${1}
 	}
-snippet cx
-	cx({
-		${1}: ${2}
+snippet scu
+	shouldComponentUpdate(nextProps, nextState) {
+		${1}
+	}
+snippet clnl
+	let ${1:classerName} = classNames({
+		${2}
 	});
-snippet fup
-	forceUpdate(${1:callback});
+snippet clnv
+	var ${1:classerName} = classNames({
+		${2}
+	});
 snippet gdp
 	getDefaultProps() {
 		return {
@@ -39,64 +80,36 @@ snippet gdp
 snippet gis
 	getInitialState() {
 		return {
-			${1}: ${2}
+			${1}
 		};
 	}
-snippet ism
-	isMounted()
-snippet jsx
-	/**
-	 * @jsx React.DOM
-	 */
+snippet use
+	"use strict";
 snippet pt
-	propTypes: {
-		${1}: React.PropTypes.${2:string}
+	static propTypes = {
+		${1}
 	}
-snippet rcc
-	/**
-	 * @jsx React.DOM
-	 */
-
-	var React = require('React');
-
-	class _${1:ClassName} {
-
-		render() {
-			return (
-				${0:<div />}
-			);
-		}
-	};
-
-	module.exports = React.createClass(_$1}.prototype);
-snippet cc
-	class _${1:ClassName} {
-
-		render() {
-			return (
-				${0:<div />}
-			);
-		}
-	};
-
-	export const $1 = React.createClass(_$1.prototype);
 snippet ren
 	render() {
 		return (
-			${1:<div />}
+			${1}
 		);
 	}
 snippet sst
-	setState({
-		${1}: ${2}
-	});
-snippet scu
-	shouldComponentUpdate(nextProps, nextState) {
+	this.setState({
 		${1}
-	}
+	});
 snippet props
 	this.props.${1}
 snippet state
 	this.state.${1}
-snippet trp
-	transferPropsTo(${1});
+snippet dpt
+	${1:prop}: React.PropTypes.${2:type}
+snippet rptf
+	React.PropTypes.func
+snippet rpts
+	React.PropTypes.string
+snippet rptn
+	React.PropTypes.number
+snippet rpto
+	React.PropTypes.object
